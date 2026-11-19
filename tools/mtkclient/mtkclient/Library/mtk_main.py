@@ -350,6 +350,14 @@ class Main(metaclass=LogBase):
                 self.info(f"Data from {hex(addr)} with size of {hex(length)} was written to " + filename)
 
     def run(self, parser):
+        if os.environ.get('C30_PACKAGE_ROOT'):
+            if self.args.cmd not in ('gpt', 'printgpt', 'r', 'w', 'e', 'reset'):
+                raise ValueError('This C30 package only supports gpt, printgpt, r, w, e and reset; use upstream MTKClient for other commands')
+            if self.args.cmd in ('w', 'e'):
+                from pathlib import Path
+                from verify_files import verify
+                # Hash large images before connecting, so the DA is not left idle.
+                verify(Path(os.environ['C30_PACKAGE_ROOT']))
         try:
             if self.args.debugmode:
                 loglevel = logging.DEBUG
@@ -748,6 +756,10 @@ class Main(metaclass=LogBase):
                                 wf.write(line)
                         print("Uart Log written to uartlog.txt")
                     mtk.port.close()
+                else:
+                    raise RuntimeError("Could not configure DA")
+            else:
+                raise RuntimeError("Could not connect to the device")
             self.close()
 
     def cmd_log(self, mtk, filename):

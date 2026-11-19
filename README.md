@@ -1,12 +1,16 @@
 # C30 Clean MTK 测试包
 
+**本仓库不提交或上传 super.img；镜像是刷机时由使用者在本地准备的输入。** 针对说明中的原备份和硬件布局，把修改后的 RAW 镜像放到 `images/super.img`，把原始回退镜像放到 `rollback/super.img`，校验通过后再执行刷写。脚本会将修改后的整个 super 分区镜像写入设备，不会在设备上自动修改原镜像。
+
+构建、测试、连接保护与完整发行包要求见 [BUILD_AND_RELEASE.md](docs/BUILD_AND_RELEASE.md)。桌面源码的新改动尚未重建到历史 APK/固件中。
+
 刷机步骤与使用说明见 [README_刷机步骤.txt](README_刷机步骤.txt)。
 
 ## 开源许可证
 
 本仓库原创代码采用 **GNU GPL v3.0（GPL-3.0-only）**，完整条款见 [LICENSE](LICENSE)。
 
-授权范围为仓库根目录的原创 `.cmd` 脚本、`sources/` 中的原创 Python 和 Java 源码及 `AndroidManifest.xml`，以及以下原创辅助脚本：
+授权范围为仓库根目录的原创 `.cmd` 脚本、`sources/` 中的原创 Python 和 Java 源码及 `AndroidManifest.xml`，以及 `tools/` 根目录的原创 Python 辅助脚本、`tests/` 中的原创测试代码和 `.github/workflows/` 工作流配置：
 
 - `tools/check_layout.py`
 - `tools/prepare_read.py`

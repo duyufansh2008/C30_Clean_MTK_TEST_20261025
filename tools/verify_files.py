@@ -1,20 +1,64 @@
 from pathlib import Path
-import json,hashlib,sys
-root=Path(__file__).resolve().parent.parent
-def digest(p):
-    with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
-try:
-    if len(sys.argv)>1 and sys.argv[1]=='--readback':
-        folder='rollback' if len(sys.argv)>2 and sys.argv[2]=='original' else 'images'
-        for name in ['super.img','vbmeta.img']:
-            actual=root/'readback'/name;target=root/folder/name
-            assert actual.stat().st_size==target.stat().st_size,f'{name}: size mismatch'
-            assert digest(actual)==digest(target),f'{name}: SHA256 mismatch'
-            print('PASS readback: '+name)
-    else:
-        manifest=json.loads((root/'SHA256SUMS.json').read_text(encoding='utf-8'))
-        for name,expected in manifest.items():
-            assert digest(root/name)==expected,'Hash mismatch: '+name
-        print(f'PASS: {len(manifest)} packaged files verified by SHA256.')
-except Exception as e:
-    print('STOP: '+str(e));sys.exit(1)
+import argparse
+import hashlib
+import json
+import sys
+
+root = Path(__file__).resolve().parent.parent
+FIRMWARE_INPUTS = {'images/super.img', 'rollback/super.img'}
+
+
+def digest(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def verify(package_root=root, source_only=False):
+    manifest = json.loads((package_root / 'SHA256SUMS.json').read_text(encoding='utf-8'))
+    required = {'images/super.img', 'images/vbmeta.img', 'rollback/super.img', 'rollback/vbmeta.img'}
+    if not required <= manifest.keys():
+        raise ValueError('Manifest omits required firmware files')
+    checked = 0
+    for name, expected in manifest.items():
+        path = (package_root / name).resolve()
+        if not path.is_relative_to(package_root.resolve()):
+            raise ValueError('Manifest path escapes package: ' + name)
+        if source_only and name in FIRMWARE_INPUTS:
+            continue
+        if not path.is_file():
+            raise FileNotFoundError(f'Missing packaged file: {name}. See docs/BUILD_AND_RELEASE.md; source checkouts are not flash packages.')
+        if digest(path) != expected:
+            raise ValueError('Hash mismatch: ' + name)
+        checked += 1
+    return checked
+
+
+def verify_readback(package_root=root, original=False):
+    manifest = json.loads((package_root / 'SHA256SUMS.json').read_text(encoding='utf-8'))
+    folder = 'rollback' if original else 'images'
+    for name in ('super.img', 'vbmeta.img'):
+        actual = package_root / 'readback' / name
+        target = package_root / folder / name
+        if actual.stat().st_size != target.stat().st_size:
+            raise ValueError(name + ': size mismatch')
+        # Compare against the release hash, not a possibly changed local image.
+        if digest(actual) != manifest[f'{folder}/{name}']:
+            raise ValueError(name + ': SHA256 mismatch')
+        print('PASS readback: ' + name)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--source', action='store_true', help='Check source checkout; never authorizes flashing')
+    mode.add_argument('--readback', nargs='?', const='clean', choices=['clean', 'original'])
+    args = parser.parse_args()
+    try:
+        if args.readback:
+            verify_readback(original=args.readback == 'original')
+        else:
+            count = verify(source_only=args.source)
+            print(f'PASS {"SOURCE ONLY (not flashable)" if args.source else "PACKAGE"}: {count} files verified by SHA256.')
+    except Exception as error:
+        print('STOP: ' + str(error))
+        sys.exit(1)

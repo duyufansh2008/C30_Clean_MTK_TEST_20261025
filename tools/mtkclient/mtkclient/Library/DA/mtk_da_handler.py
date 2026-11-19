@@ -109,6 +109,8 @@ class DaHandler(metaclass=LogBase):
             return None
 
     def connect(self, mtk, directory:str = None):
+        if os.environ.get('C30_PACKAGE_ROOT'):
+            directory = os.path.join(os.environ['C30_PACKAGE_ROOT'], 'backup')
         if directory is None:
             directory = "."
         # NOTE: single attempt with an exception guard. The actual wait/retry
@@ -280,8 +282,7 @@ class DaHandler(metaclass=LogBase):
         sfilename = os.path.join(directory, "gpt.bin")
         data, guid_gpt = self.mtk.daloader.get_gpt()
         if guid_gpt is None:
-            self.error("Error reading gpt")
-            self.close()
+            raise RuntimeError("Error reading gpt")
         else:
             with open(sfilename, "wb") as wf:
                 wf.write(data)
@@ -332,9 +333,7 @@ class DaHandler(metaclass=LogBase):
         filenames = filename.split(",")
         partitions = partitionname.split(",")
         if len(partitions) != len(filenames):
-            if display:
-                self.error("You need to gives as many filenames as given partitions.")
-            self.close()
+            raise ValueError("You need to give as many filenames as given partitions.")
         if parttype == "user" or parttype is None:
             i = 0
             count_dump = 0
@@ -345,11 +344,12 @@ class DaHandler(metaclass=LogBase):
                 partfilename = filenames[i]
                 i += 1
                 if partition == "gpt":
-                    self.mtk.daloader.readflash(addr=0,
+                    if not self.mtk.daloader.readflash(addr=0,
                                                 length=0x16000,
                                                 filename=partfilename,
                                                 parttype=parttype,
-                                                display=display)
+                                                display=display):
+                        raise RuntimeError("Failed to read GPT")
                     count_dump += 1
                     continue
                 else:
@@ -373,16 +373,9 @@ class DaHandler(metaclass=LogBase):
                                           f"{str(rpartition.sectors)} as {partfilename}.")
                             count_dump += 1
                         else:
-                            if display:
-                                self.info(f"Failed to dump sector {str(rpartition.sector)} with sector count " +
-                                          f"{str(rpartition.sectors)} as {partfilename}.")
-                            count_dump += 1
+                            raise RuntimeError(f"Failed to dump partition: {partition}")
                     else:
-                        if display:
-                            self.error(f"Error: Couldn't detect partition: {partition}\nAvailable partitions:")
-                        for rpartition in gpttable:
-                            if display:
-                                self.info(rpartition.name)
+                        raise RuntimeError(f"Couldn't detect partition: {partition}")
             if count_dump > 1 and count_dump == len(filenames):
                 if display:
                     self.info("All partitions were dumped")
@@ -398,8 +391,7 @@ class DaHandler(metaclass=LogBase):
                     if display:
                         print(f"Dumped partition {str(partitionname)} as {partfilename}.")
                 else:
-                    if display:
-                        print(f"Failed to dump partition {str(partitionname)} as {partfilename}.")
+                    raise RuntimeError(f"Failed to dump partition {str(partitionname)} as {partfilename}.")
                 i += 1
 
     def da_rl(self, directory, parttype, skip, display: bool = True):
@@ -539,19 +531,21 @@ class DaHandler(metaclass=LogBase):
 
     def da_write(self, parttype: str, filenames: list, partitions: list):
         if len(partitions) != len(filenames):
-            self.error("You need to gives as many filenames as given partitions.")
-            self.close()
-            exit(0)
+            raise ValueError("You need to give as many filenames as given partitions.")
+        for filename in filenames:
+            if not os.path.isfile(filename):
+                raise FileNotFoundError(filename)
         if parttype == "user" or parttype is None:
             i = 0
             for partition in partitions:
                 partfilename = filenames[i]
                 i += 1
                 if partition == "gpt":
-                    self.mtk.daloader.writeflash(addr=0,
+                    if not self.mtk.daloader.writeflash(addr=0,
                                                  length=os.stat(partfilename).st_size,
                                                  filename=partfilename,
-                                                 parttype=parttype)
+                                                  parttype=parttype):
+                        raise RuntimeError("Failed to write GPT")
                     continue
                 res = self.mtk.daloader.detect_partition(partition, parttype)
                 if res[0]:
@@ -564,13 +558,11 @@ class DaHandler(metaclass=LogBase):
                             f"Wrote {partfilename} to sector {str(rpartition.sector)} with " +
                             f"sector count {str(rpartition.sectors)}.")
                     else:
-                        print(
+                        raise RuntimeError(
                             f"Failed to write {partfilename} to sector {str(rpartition.sector)} with " +
                             f"sector count {str(rpartition.sectors)}.")
                 else:
-                    self.error(f"Error: Couldn't detect partition: {partition}\nAvailable partitions:")
-                    for rpartition in res[1]:
-                        self.info(rpartition.name)
+                    raise RuntimeError(f"Couldn't detect partition: {partition}")
         else:
             pos = 0
             for partfilename in filenames:
@@ -580,7 +572,7 @@ class DaHandler(metaclass=LogBase):
                     print(f"Wrote {partfilename} to sector {str(pos // 0x200)} with " +
                           f"sector count {str(size)}.")
                 else:
-                    print(f"Failed to write {partfilename} to sector {str(pos // 0x200)} with " +
+                    raise RuntimeError(f"Failed to write {partfilename} to sector {str(pos // 0x200)} with " +
                           f"sector count {str(size)}.")
                 psize = size // 0x200 * 0x200
                 if size % 0x200 != 0:
@@ -668,14 +660,11 @@ class DaHandler(metaclass=LogBase):
                             f"sector count {str(rpartition.sectors)}.")
                         count_fp += 1
                     else:
-                        print(
+                        raise RuntimeError(
                             f"Failed to format sector {str(rpartition.sector)} with " +
                             f"sector count {str(rpartition.sectors)}.")
-                        count_fp -= 1
                 else:
-                    self.error(f"Error: Couldn't detect partition: {partition}\nAvailable partitions:")
-                    for rpartition in res[1]:
-                        self.info(rpartition.name)
+                    raise RuntimeError(f"Couldn't detect partition: {partition}")
         elif parttype in ["boot1","boot2"]:
             if self.mtk.daloader.formatflash(addr=0,
                                              length=0x40000,
@@ -683,10 +672,12 @@ class DaHandler(metaclass=LogBase):
                 print(
                     f"Formatted {parttype}.")
                 count_fp += 1
+            else:
+                raise RuntimeError(f"Failed to format {parttype}")
+        else:
+            raise ValueError(f"Unsupported erase parttype: {parttype}")
         if count_fp == len(partitions) and count_fp > 1:
             print("All partitions formatted.")
-        elif count_fp != len(partitions) and count_fp > 1:
-            print("Failed to format all partitions.")
 
     def da_ess(self, sector: int, sectors: int, parttype: str):
         if parttype == "user" or parttype is None:
@@ -1258,6 +1249,11 @@ class DaHandler(metaclass=LogBase):
         if mtk is None or mtk.daloader is None:
             self.error("Error on running da, aborting :(")
             sys.exit(1)
+        package_root = os.environ.get('C30_PACKAGE_ROOT')
+        if package_root:
+            from device_guard import guard_command
+            if guard_command(mtk, cmd, args, package_root):
+                return
         if mtk.daloader.config.generatekeys and mtk.daloader.is_patched():
             mtk.daloader.keys()
         if cmd == "gpt":
@@ -1615,4 +1611,3 @@ class DaHandler(metaclass=LogBase):
             elif subcmd == "vbmeta":
                 vbmode = int(args.vbmode)
                 self.da_vbmeta(vbmode=vbmode)
-

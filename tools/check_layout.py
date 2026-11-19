@@ -1,38 +1,68 @@
 from pathlib import Path
-import struct,json,zlib,sys
-root=Path(__file__).resolve().parent.parent
-def check(path,expected):
-    b=path.read_bytes();matches=[]
-    for bs in [512,4096]:
-        if b[bs:bs+8]!=b'EFI PART':continue
-        hs=struct.unpack_from('<I',b,bs+12)[0]
-        if not 92<=hs<=bs:continue
-        h=bytearray(b[bs:bs+hs]);crc=struct.unpack_from('<I',h,16)[0];h[16:20]=bytes(4)
-        if zlib.crc32(h)&0xffffffff!=crc:continue
-        if struct.unpack_from('<Q',h,24)[0]!=1:continue
-        lba,count,size,crc_entries=struct.unpack_from('<QIII',h,72)
-        assert 0<count<=4096 and 128<=size<=1024
-        entries=b[lba*bs:lba*bs+count*size]
-        assert len(entries)==count*size,'Incomplete GPT partition table'
-        assert zlib.crc32(entries)&0xffffffff==crc_entries,'GPT partition table CRC mismatch'
-        actual={}
+import json
+import struct
+import sys
+import zlib
+
+root = Path(__file__).resolve().parent.parent
+
+
+def check_bytes(data, expected):
+    matches = []
+    for bs in (512, 4096):
+        if data[bs:bs + 8] != b'EFI PART':
+            continue
+        if len(data) < bs + 92:
+            raise ValueError('Incomplete GPT header')
+        hs = struct.unpack_from('<I', data, bs + 12)[0]
+        if not 92 <= hs <= bs or len(data) < bs + hs:
+            raise ValueError('Invalid GPT header size')
+        header = bytearray(data[bs:bs + hs])
+        crc = struct.unpack_from('<I', header, 16)[0]
+        header[16:20] = bytes(4)
+        if zlib.crc32(header) & 0xffffffff != crc:
+            raise ValueError('GPT header CRC mismatch')
+        if struct.unpack_from('<Q', header, 24)[0] != 1:
+            raise ValueError('Expected primary GPT at LBA 1')
+        lba, count, size, entries_crc = struct.unpack_from('<QIII', header, 72)
+        if not (lba >= 2 and 0 < count <= 4096 and 128 <= size <= 1024 and size % 8 == 0):
+            raise ValueError('Invalid GPT partition table dimensions')
+        entries = data[lba * bs:lba * bs + count * size]
+        if len(entries) != count * size:
+            raise ValueError('Incomplete GPT partition table')
+        if zlib.crc32(entries) & 0xffffffff != entries_crc:
+            raise ValueError('GPT partition table CRC mismatch')
+        actual = {}
         for i in range(count):
-            e=entries[i*size:(i+1)*size]
-            if e[:16]==bytes(16):continue
-            first,last=struct.unpack_from('<QQ',e,32)
-            name=e[56:128].decode('utf-16le').split('\0',1)[0]
-            actual[name]={'offset':first*bs,'size':(last-first+1)*bs}
-        for name,want in expected.items():
-            assert name in actual,f'Missing partition: {name}'
-            assert actual[name]==want,f'Partition mismatch: {name}: {actual[name]} != {want}'
+            entry = entries[i * size:(i + 1) * size]
+            if entry[:16] == bytes(16):
+                continue
+            first, last = struct.unpack_from('<QQ', entry, 32)
+            name = entry[56:128].decode('utf-16le').split('\0', 1)[0]
+            if first > last or not name or name in actual:
+                raise ValueError('Invalid or duplicate GPT partition: ' + name)
+            actual[name] = {'offset': first * bs, 'size': (last - first + 1) * bs}
+        for name, want in expected.items():
+            if name not in actual:
+                raise ValueError('Missing partition: ' + name)
+            if actual[name] != want:
+                raise ValueError(f'Partition mismatch: {name}: {actual[name]} != {want}')
         matches.append(bs)
-    assert len(matches)==1,'No unambiguous valid GPT with the required C30 layout was found'
+    if len(matches) != 1:
+        raise ValueError('No unambiguous valid GPT with the required C30 layout was found')
     return matches[0]
-if __name__=='__main__':
+
+
+def check(path, expected):
+    return check_bytes(path.read_bytes(), expected)
+
+
+if __name__ == '__main__':
     try:
-        path=Path(sys.argv[1]) if len(sys.argv)>1 else root/'backup/gpt.bin'
-        expected=json.loads((root/'tools/expected_layout.json').read_text())
-        bs=check(path,expected)
+        path = Path(sys.argv[1]) if len(sys.argv) > 1 else root / 'backup/gpt.bin'
+        expected = json.loads((root / 'tools/expected_layout.json').read_text())
+        bs = check(path, expected)
         print(f'PASS: GPT CRC and {len(expected)} required partition offsets/sizes match. Sector size: {bs}.')
-    except Exception as e:
-        print('STOP: '+str(e));sys.exit(1)
+    except Exception as error:
+        print('STOP: ' + str(error))
+        sys.exit(1)

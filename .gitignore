@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+backup/
+readback/
+work/
+sources/build/
+*.zip
+
+# Firmware inputs stay local; they are still checked by SHA256SUMS.json.
+/images/super.img
+/rollback/super.img
