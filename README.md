@@ -1,6 +1,6 @@
 # C30 Clean MTK 测试包
 
-**当前为源码与历史验证记录，缺少 clean/rollback 两个 super.img，不能直接作为完整刷机包使用。** 缺失镜像见 [Issue #1](https://github.com/lichengcheng2009/C30_Clean_MTK_TEST_20261025/issues/1)。
+**本仓库不提交或上传 super.img；镜像是刷机时由使用者在本地准备的输入。** 针对说明中的原备份和硬件布局，把修改后的 RAW 镜像放到 `images/super.img`，把原始回退镜像放到 `rollback/super.img`，校验通过后再执行刷写。脚本会将修改后的整个 super 分区镜像写入设备，不会在设备上自动修改原镜像。
 
 构建、测试、连接保护与完整发行包要求见 [BUILD_AND_RELEASE.md](docs/BUILD_AND_RELEASE.md)。桌面源码的新改动尚未重建到历史 APK/固件中。
 

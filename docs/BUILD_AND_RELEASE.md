@@ -2,9 +2,11 @@
 
 ## 当前交付边界
 
-这个 Git 仓库是源码和历史构建记录，不是完整可刷包。缺失的 `images/super.img` 与 `rollback/super.img` 见 [Issue #1](https://github.com/lichengcheng2009/C30_Clean_MTK_TEST_20261025/issues/1)。没有找到可验证的作者公开下载入口，不能用其他 C30 ROM 替代。
+这个 Git 仓库提供源码、脚本和历史构建记录。`super.img` 是本地输入，不需要提交 Git，也不要求作者上传或公开分发。使用者从说明对应的原始备份生成修改后的 RAW super，放到 `images/super.img`；保留原始备份的 super 到 `rollback/super.img` 供恢复。当前完整校验要求这两份本地输入都已准备好。不能用其他 C30 ROM 代替对应原备份。
 
-`validation/*.json`、`sources/C30CleanLauncher.apk` 和固件 SHA256 是原始测试构建的历史记录。当前桌面源码优化不会自动进入历史 APK 或旧固件。本次构建结果在 `sources/build/`，需要作者取得原始输入后重建、验证 `super.img`，再更新发行包及镜像哈希。不要把模拟器测试 APK 刷入设备。
+`03_Flash_Clean.cmd` 按分区名将 `images/super.img` 写入整个 super 分区，并写入配套 vbmeta；它不会读取设备现有 super 后在设备上自动打补丁。`90_Restore_Original.cmd` 则写回本地 `rollback/` 的原始镜像。两个 super 路径已加入 `.gitignore`，避免误提交大镜像。
+
+`validation/*.json`、`sources/C30CleanLauncher.apk` 和固件 SHA256 是原始测试构建的历史记录。当前桌面源码优化不会自动进入历史 APK 或旧固件。本次构建结果在 `sources/build/`，使用者需要用自己的对应原始输入重建、验证 `super.img`，再更新本地镜像哈希。不要把模拟器测试 APK 刷入设备。
 
 ## 无需设备的源码检查
 
@@ -19,7 +21,7 @@ python tools/verify_files.py --source
 
 `--source` 只跳过上述两个外置 super 镜像，其他清单项仍须存在且哈希一致；输出明确为 `SOURCE ONLY (not flashable)`。刷写与擦除入口始终使用完整校验，不接受源码检查结果代替。
 
-修改文件并 `git add` 后运行 `python tools/update_manifest.py`。它以 Git 索引文件列表更新源码哈希；缺失的两个 super 镜像保留原有预期值，不会被静默删除。`.gitattributes` 禁止自动转换换行，保证 Windows/Linux 对相同提交校验相同字节。
+修改文件并 `git add` 后运行 `python tools/update_manifest.py`。它以 Git 索引文件列表更新源码哈希；未提供的两个本地 super 输入保留原有预期值，不会被静默删除。`.gitattributes` 禁止自动转换换行，保证 Windows/Linux 对相同提交校验相同字节。
 
 ## 独立构建桌面 APK
 
@@ -55,7 +57,7 @@ adb shell am instrument -w com.fundot.p4bu/com.fundot.p4bu.LauncherChecks
 
 从上述原始 super 精确提取 system 的物理范围为偏移 617611264、长度 1339117568；保留原输入，切勿在原件上原地修改。文件树及 inode 清单须来自同一份逻辑镜像。
 
-运行 `python sources/modify_firmware.py` 后，使用 7-Zip `7z l -slt work/modified/system.img` 生成 UTF-8 的 `work/modified/system-listing.txt`，再运行 `python sources/verify_firmware.py`。这些脚本保留特定 ext4 格式和原始镜像大小限制，遇到其他布局必须拒绝。成功后才可把验证后的输出制作成新的发行镜像，并更新历史验证记录、APK、两套固件及清单。缺少原始输入时无法完成这一步，见 Issue #1。
+运行 `python sources/modify_firmware.py` 后，使用 7-Zip `7z l -slt work/modified/system.img` 生成 UTF-8 的 `work/modified/system-listing.txt`，再运行 `python sources/verify_firmware.py`。这些脚本保留特定 ext4 格式和原始镜像大小限制，遇到其他布局必须拒绝。成功后才可把验证后的输出制作成新的发行镜像，并更新历史验证记录、APK、两套固件及清单。原始输入由使用者保存在本地，不需要提交或上传。
 
 ## 连接与操作保护
 
@@ -71,7 +73,7 @@ C30 的 `MTK.cmd` 只开放 `gpt`、`printgpt`、`r`、`w`、`e`、`reset`；写
 
 ## 制作完整发行包
 
-取得作者可合法提供、与清单匹配的两个 super 镜像后，放入指定目录。若包含新版桌面，须先完成上述重建和验证、更新镜像哈希；不能沿用旧镜像冒充新版。
+这一步可选，用于本地整理自己的完整刷机包，不是 Git 提交或公开上传的要求。先在上述路径准备修改后的 super 和原始回退 super。现有清单记录历史构建的预期哈希；如果重新生成了修改版，须先完成离线验证，再运行 `python tools/update_manifest.py` 更新本地清单。即使两个 super 被 Git 忽略，该脚本仍会校验/记录它们；更新源码清单不需要把镜像 `git add`。不要通过随意改哈希跳过验证。
 
 ```text
 python tools/verify_files.py
