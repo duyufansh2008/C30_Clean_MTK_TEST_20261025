@@ -27,6 +27,7 @@ jobs:
       - run: python tools/verify_files.py --source
       - name: Windows CLI loads without accessing a device
         if: runner.os == 'Windows'
+        timeout-minutes: 2
         shell: cmd
         run: MTK.cmd --help
 
