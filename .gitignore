@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+backup/
+readback/
+work/
+sources/build/
+*.zip

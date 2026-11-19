@@ -1,5 +1,7 @@
 ﻿C30 皆成管控清除包（MTK 测试构建）
-制作日期：2026-10-25
+原始测试构建制作日期：2026-10-25
+
+当前 Git 仓库仅含源码与历史记录，缺少 images/super.img、rollback/super.img，不能直接刷写。获取原始输入及新版重建要求见 docs/BUILD_AND_RELEASE.md 和 GitHub Issue #1；历史 APK/固件不自动包含源码新改动。
 
 本包已完成离线构建、文件系统检查和差异核对；尚未在你的平板上试刷、启动或验证触摸/相机/网络。它具有可供 MTK 写入的 RAW 分区镜像和刷入脚本，但不能据此保证真机可启动或绝对无损。
 适用前提：就是所提供备份对应的这台 C30，BL 已解锁，并接受清空用户数据。不要给其他型号或其他硬件版本的“C30”使用。
@@ -38,10 +40,10 @@ sources/                         新桌面源码、签名密钥和本次构建/�
 validation/                      改动清单、离线检查结果、工具来源与原文件 SHA256
 SHA256SUMS.json                   静态包文件校验值
 
-MTKClient 源码固定到官方提交：7cb40e727727dfe3faa065eefb29b16ed29bbdf1。
+MTKClient 上游输入固定到官方提交：7cb40e727727dfe3faa065eefb29b16ed29bbdf1；当前本地安全补丁见 tools/mtkclient/C30_LOCAL_PATCHES.md。
 内含 V5 DA 已离线解析，包含 MT6771 的 DA 条目；这仍不等于已验证你平板的 DA 认证和 USB 通信。
 本包 CLI 工具和所需 Python 模块已在工作目录配置并测试 --help 可运行。
-PYTHON.cmd 优先使用这台电脑已有的 Codex Python；换电脑使用时需自行安装 64 位 Python 3.10 或更高版本并使 python 可用。
+PYTHON.cmd 优先使用这台电脑已有的 Codex Python；换电脑使用时需自行安装 64 位 Python 3.11 或更高版本并使 python 可用。
 
 三、推荐刷入流程（MTK BROM/Preloader 端口）
 
@@ -58,11 +60,11 @@ PYTHON.cmd 优先使用这台电脑已有的 Codex Python；换电脑使用时�
 3. 平板关机、断开 USB。执行：
       .\02_Read_Layout.cmd
    然后按设备原来能进入 MTK 深刷端口的按键方法接线；常见为关机后按住音量键接线，具体以本机已验证的方法为准。工具识别后松开按键。
-   此步骤读取 GPT 到 backup/gpt.bin，再验证 GPT CRC 和 8 个关键分区的起始地址/大小。必须看到 PASS。读取失败、DA/认证失败、端口不通或布局不符时停在这里；不要改为手填地址或整盘格式化。
+   此步骤读取 GPT 到 backup/gpt.bin，再验证 GPT CRC 和 8 个关键分区的起始地址/大小，并登记实时读取的设备指纹。必须看到 PASS。读取失败、DA/认证失败、端口不通或布局不符时停在这里；不要改为手填地址或整盘格式化。
 
 4. 仍处于 MTK 连接状态，执行：
       .\03_Flash_Clean.cmd
-   脚本先校验包和已读 GPT，再只写 super、vbmeta。不要选择 Format All、Firmware Upgrade 或刷入其他分区。工具若等待重新连接，重新关机接入同一台平板。
+   脚本先完整校验包，再在写入的实际 DA 连接中重新读取 GPT 和设备指纹，与登记一致后才只写 super、vbmeta。不要选择 Format All、Firmware Upgrade 或刷入其他分区。工具若等待重新连接，重新关机接入同一台平板。
 
 5. 写完后执行回读校验：
       .\04_Readback_Check.cmd
@@ -70,7 +72,7 @@ PYTHON.cmd 优先使用这台电脑已有的 Codex Python；换电脑使用时�
 
 6. 回读通过后，清空旧签名记录、管控数据及加密元数据：
       .\05_Erase_User_Data.cmd
-   此步骤明确清除 userdata、metadata、md_udc、cache。当前固件的 /metadata 实际挂载自 md_udc，所以必须一并处理。只运行一次即可；如报告任何格式化失败，先解决失败再启动。
+   此步骤先重新核对实时设备/GPT，要求输入 ERASE 加屏幕显示的 12 位设备指纹，确认后才清除 userdata、metadata、md_udc、cache。当前固件的 /metadata 实际挂载自 md_udc，所以必须一并处理。只运行一次即可；如报告任何格式化失败，先解决失败再启动。
    不清除 nvram、nvdata、nvcfg、persist、protect1、protect2、frp、seccfg，也不写 preloader/lk。
 
 7. 执行：

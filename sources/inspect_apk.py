@@ -3,7 +3,8 @@ import struct, zipfile, re, json, sys
 
 def stringpool(b, base=0):
     typ,hs,size=struct.unpack_from('<HHI',b,base)
-    assert typ==1
+    if not (typ==1):
+        raise ValueError('Expected an Android resource string pool')
     n,styles,flags,start,style_start=struct.unpack_from('<5I',b,base+8)
     offsets=struct.unpack_from('<'+'I'*n,b,base+hs)
     out=[]

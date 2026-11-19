@@ -1,12 +1,16 @@
 # C30 Clean MTK 测试包
 
+**当前为源码与历史验证记录，缺少 clean/rollback 两个 super.img，不能直接作为完整刷机包使用。** 缺失镜像见 [Issue #1](https://github.com/lichengcheng2009/C30_Clean_MTK_TEST_20261025/issues/1)。
+
+构建、测试、连接保护与完整发行包要求见 [BUILD_AND_RELEASE.md](docs/BUILD_AND_RELEASE.md)。桌面源码的新改动尚未重建到历史 APK/固件中。
+
 刷机步骤与使用说明见 [README_刷机步骤.txt](README_刷机步骤.txt)。
 
 ## 开源许可证
 
 本仓库原创代码采用 **GNU GPL v3.0（GPL-3.0-only）**，完整条款见 [LICENSE](LICENSE)。
 
-授权范围为仓库根目录的原创 `.cmd` 脚本、`sources/` 中的原创 Python 和 Java 源码及 `AndroidManifest.xml`，以及以下原创辅助脚本：
+授权范围为仓库根目录的原创 `.cmd` 脚本、`sources/` 中的原创 Python 和 Java 源码及 `AndroidManifest.xml`，以及 `tools/` 根目录的原创 Python 辅助脚本、`tests/` 中的原创测试代码和 `.github/workflows/` 工作流配置：
 
 - `tools/check_layout.py`
 - `tools/prepare_read.py`
