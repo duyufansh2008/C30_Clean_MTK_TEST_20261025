@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.fundot.p4bu" android:versionCode="523031603" android:versionName="C30-Clean-1.0">
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="30" />
+    <queries><intent><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent></queries>
+    <application android:label="C30桌面" android:icon="@android:drawable/ic_menu_view" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:debuggable="false" android:supportsRtl="true">
+        <activity android:name="app.lawnchair.LawnchairLauncher" android:exported="true" android:launchMode="singleTask" android:stateNotNeeded="true" android:excludeFromRecents="true" android:clearTaskOnLaunch="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.HOME"/><category android:name="android.intent.category.DEFAULT"/></intent-filter>
+        </activity>
+    </application>
+</manifest>

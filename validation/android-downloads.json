@@ -1,0 +1,14 @@
+[
+  {
+    "package": "platforms;android-30",
+    "url": "platform-30_r03.zip",
+    "checksum": "e7c6280901dcfa511af098d67dd88c4dfcbc6ea2",
+    "algorithm": "sha1"
+  },
+  {
+    "package": "build-tools;30.0.3",
+    "url": "91936d4ee3ccc839f0addd53c9ebf087b1e39251.build-tools_r30.0.3-windows.zip",
+    "checksum": "fc165c721b8d2da55e6fede467526c81f562be7b",
+    "algorithm": "sha1"
+  }
+]

@@ -1,0 +1,945 @@
+{
+  "commit": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob": "782d5becfbc2ed68edb03b1639f29fa4a1f8796d",
+      "sha256": "f8ab5d5accbd682b0b87a8711353a64939edeca847960162250c5ba0cddc4926"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "bc04eaed5793c4b48d753c08945ba368ad221874",
+      "sha256": "a104073617df047bc68a930c6f38c391a23f1c26a61c51c2b65552ed5869eda0"
+    },
+    {
+      "path": "README-USAGE.md",
+      "git_blob": "47942731b6d3761e43f3aad92a5a03a2b4c1ec9a",
+      "sha256": "f575e2106446916c171b59d4ec7dcb625f332295938ca9cb84908249599ceb65"
+    },
+    {
+      "path": "Tools/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Tools/brom_to_offs.py",
+      "git_blob": "b1e98b8edf44f7609c6cc1e0fd73e8f5e8f94107",
+      "sha256": "4d5ef1f6e2e350b0ab606609c1c28b12b93941094911552d3d29e291c90571af"
+    },
+    {
+      "path": "Tools/enc_test.py",
+      "git_blob": "0eb9cd1e297e2d46073d2f41e0cafcfb0033969c",
+      "sha256": "c027d3901f8ddf4d9797dff5edcf0cca6ea8fc767a7b6933f937d06ad9567d37"
+    },
+    {
+      "path": "Tools/get_preloader_values.py",
+      "git_blob": "655428bdea271cbb68f865b88bbf96a77a9b948d",
+      "sha256": "c585ead52d9b5cd41c98c1fa3a6857c8b419c7bb49e3728b657bd92c7bfdcd65"
+    },
+    {
+      "path": "Tools/patch_legacy.py",
+      "git_blob": "2ae2e67b6a83294da8258727309cfa21f61c5aaa",
+      "sha256": "9a99836724ece98bdae9916cab5bd65285a3ee3e3e26b4784e64237d948f7e6d"
+    },
+    {
+      "path": "Tools/da_parser.py",
+      "git_blob": "d2281763a99daa4ca7e725969969d3b438ecf94c",
+      "sha256": "10da2a295da5a01f4c11427c9325822dcbbc8c7e239a0e2897f873e2fd5d4d1a"
+    },
+    {
+      "path": "Tools/emulate_preloader.py",
+      "git_blob": "5645a5fb0113f5837ecf8d4dfa39acfbb38308d5",
+      "sha256": "3b077227cdded90baa3aa32ebc308aed93274b181e82f9a4bed98b0186f3b40d"
+    },
+    {
+      "path": "Tools/nb0extract.py",
+      "git_blob": "a380bc62748435e8b4caa61b387f783a234e845a",
+      "sha256": "4cb1c45a4fe5ec16ccf898976b9e53af460453872731c1da46c12939f9f5a786"
+    },
+    {
+      "path": "Tools/rpmb_test.py",
+      "git_blob": "829fd44710d38514cea9d3ef613c1bbe6b932058",
+      "sha256": "d35edff679dd9a8e4f3bd581528a383a0b9391b418768ae295a89eea35764877"
+    },
+    {
+      "path": "Tools/decode.py",
+      "git_blob": "ffdf53c97d41f4d60386af193d0ed3898b1ada30",
+      "sha256": "8dbe342db3819762b6b245e464dab2a4c204e54802826b4d9b6cd353a35f7160"
+    },
+    {
+      "path": "Tools/hardcoded_partition.py",
+      "git_blob": "5801fa8609f2c2a97b9fac31595b8d0603258390",
+      "sha256": "58c50c034366a41c9a34264a62a5e3bdb5c9e77d039140f89ebac5eee8781ad9"
+    },
+    {
+      "path": "Tools/preloader_to_dram.py",
+      "git_blob": "54e45d5c1bc668620347cddf4db929e61919b3da",
+      "sha256": "add8c40e669d1858a7dc5f9eb503a72defb2e7518323df6266a62d49ead63bb0"
+    },
+    {
+      "path": "mtkclient/Library/Auth/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtk_tcpip_client.py",
+      "git_blob": "eeb3e420e603a5cab9c126f08bebee342c842d0b",
+      "sha256": "047c79d77417bbc0935702823f34ad81102b77990f92ecd98149c0562873b070"
+    },
+    {
+      "path": "mtk_iot_api.py",
+      "git_blob": "e3ed9cb20b46ba11d6167efab57a90dd48817e12",
+      "sha256": "3ceb4b2fa505dd8e8ea5643a39df4af05a6aa254381836d7455d56a365f5e837"
+    },
+    {
+      "path": "mtk_tcpip_server.py",
+      "git_blob": "9352dc20823dc9ccdca77d6aa4675c345864a164",
+      "sha256": "19f9b63db426133221842c97ac764eb65991ca11967843d67af64e664514dfca"
+    },
+    {
+      "path": "Tools/preloader_emu_mmc.py",
+      "git_blob": "4629fddcd42b3471d11591525983c3a6ec2f6864",
+      "sha256": "85c29934060922887c5bd3017373f0729dd679c6abc61fc59f43c54bcad0b416"
+    },
+    {
+      "path": "mtk.py",
+      "git_blob": "49cd29d890bbc350e18cb1ea07c3970b9be025d1",
+      "sha256": "b68f13e078770097c13a484f517212c77fc7f8aa26f6b83b2187a9005b29e556"
+    },
+    {
+      "path": "Tools/samsung_decode.py",
+      "git_blob": "ce1cb23a96b0a986af6fb740e96fdd7918bb4c39",
+      "sha256": "ea99e5a21205447a0d7c50b83aed385839255424cbaa5ba940da93922723d4f6"
+    },
+    {
+      "path": "mtkclient/Library/Connection/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Tools/patch_preloader.py",
+      "git_blob": "5f355211a40f448666ab0169450381af5a042d08",
+      "sha256": "4337a6a9c987971ad0f98d4373983d313a15a70ab3a8baeb85243fc6507b08cf"
+    },
+    {
+      "path": "mtk_gui.py",
+      "git_blob": "ae3cf7f7433f16831274efb936b32315ae659dae",
+      "sha256": "874a4b3f7b009bd67842d68f981382f9417a7c6d1dc74172dbb4818592d3ea24"
+    },
+    {
+      "path": "mtkclient/Library/Auth/sla_keys.py",
+      "git_blob": "bf2a856aa5c4ee275e58dff398ff115c09a5403d",
+      "sha256": "be7ab831dcd982da00f238bd3a8248f1cab92eb5a3231e6b7ad1c33ec6a180ba"
+    },
+    {
+      "path": "mtkclient/Library/DA/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtk_api.py",
+      "git_blob": "e1c6c62821bea2338bd2aa40668c601ad0acfc45",
+      "sha256": "9a4592d713b0acf1217b4931ad892f0b56e55f73fb7167f344f00935315ebc39"
+    },
+    {
+      "path": "mtkclient/Library/DA/daconfig.py",
+      "git_blob": "3d5f2b23a4421c79583c7a786b37c3e2ea03c845",
+      "sha256": "bb40fdd4661cbf45da209d1266c01ba4731a1f88bfb9111071c96b1bf66dd8d5"
+    },
+    {
+      "path": "mtkclient/Library/Connection/usbscsi.py",
+      "git_blob": "ab54c1dc645abe078324852ffe26c66bed348f9b",
+      "sha256": "9860858dcf0bda0cf1620e5d5b05535d59adcf7c88febd2afab641dd943643a2"
+    },
+    {
+      "path": "Tools/whitelist_parser.py",
+      "git_blob": "de23bd5c66186090fade6c434703781b91e6f6ba",
+      "sha256": "3efed97c1b3f1f5a9a66fabc98eb60db7e19c7256983cb15775cabc864ff0252"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_flash_param.py",
+      "git_blob": "ffebabb672a0999315c6b8d6ca8d50c886362220",
+      "sha256": "3630acbbb97f8ed6f834e46e230024e97fb58cb6dd0d432bc9e3bdf2f5f85d16"
+    },
+    {
+      "path": "mtkclient/Library/Connection/seriallib.py",
+      "git_blob": "1ae208fc02b1d64cb352fba952af47eb0d74f965",
+      "sha256": "d94d908d4e6dc46988cde6b39f092723c973101c027f4d0fc51a3be0fbb34f7f"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_iot_flash_param.py",
+      "git_blob": "322e09fb35b2a7a58e01cf7db797aad5f3a95acc",
+      "sha256": "56d3a2d0c014434720b38a4e7157ce57350bcd14e891bc05984366a3f523e84b"
+    },
+    {
+      "path": "mtkclient/Library/Auth/sla.py",
+      "git_blob": "f13f19178814f9c0054bdcb907af3db59f9e7db0",
+      "sha256": "f73dc399b7eaca0597298e9b59433b98496edcfec07302fa44c01cbca7be1565"
+    },
+    {
+      "path": "mtkclient/Library/Connection/usblib.py",
+      "git_blob": "54357deec02098a874c1762043a2a7a486c71f66",
+      "sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986"
+    },
+    {
+      "path": "mtkclient/Library/Connection/devicehandler.py",
+      "git_blob": "c502cf5fe7226330673377b4be59631ebacd2fc1",
+      "sha256": "cc37749b17a5ba7377ad8fdb81e01567baf3f61ac3ce1f5f4c5b6e1cbb2fef92"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/extension/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "git_blob": "8786f0ff44e7baf4842315721741892bfcd40e44",
+      "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/extension/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/mtk_daloader.py",
+      "git_blob": "d963a5896589fd8f79520e920164ede89e2fbf09",
+      "sha256": "79b80aea02831c9891e3a491613f6ce023f9a6d2ed13ead407d7d75b4bbcb713"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/xflash_flash_param.py",
+      "git_blob": "b2d4d7f3d18c140bbbbb8a778120f1a098a3f276",
+      "sha256": "61ca73349d5c33550fd687e47b9cdbdd81eeafcc9685333de54fd59412660a7b"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/extension/legacy.py",
+      "git_blob": "f7f8e8f1b55aa4ea25b0ca8568a730f07559e024",
+      "sha256": "bd9104051bea173b865ab83b14b12ade042bd8cd2d6d853d0f7fe38fa15c9819"
+    },
+    {
+      "path": "mtkclient/Library/DA/storage.py",
+      "git_blob": "a4f14a8f8c03f91d051d41702fc42ba945757cde",
+      "sha256": "649fa13ab4354664cc99207fa36b46391a3f86868d977d8403f83120d8e83986"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/extension/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/xflash_param.py",
+      "git_blob": "43b911205f79179c5020ff1d82ae80991a05c725",
+      "sha256": "df6a9bfe087d0f6f3f3bee071a6aac659a44e3de3c7979bf53a0f1cee77bfa29"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/extension/xflash.py",
+      "git_blob": "1e845ddbcc6149cd3e0d5cd003d57a301ee193c1",
+      "sha256": "e658e722358f71b43ba28499e4c46aa4ae2908d781adbb19869e6b6ebdf71554"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/xflash_lib.py",
+      "git_blob": "01248aa92548baaafe260938112e32cdf261b415",
+      "sha256": "aed9f30be371249e4432b2ca7a5b802565a5ff286339b75b4aaee0f5cd743460"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/xml_cmd.py",
+      "git_blob": "918e298755edb0fbb91d6d5aa4f08a913faef86f",
+      "sha256": "734699a8f0dd6b95279d33510363d52d731ed45617e8324364d36205c788915b"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/xml_param.py",
+      "git_blob": "c70eb048da54c2462ded9f475d7cc25ee4295d04",
+      "sha256": "5e308e0db78f8eb4a9663de7e0a77925d4b57649bac7b76843ab1847f2b6000e"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_param.py",
+      "git_blob": "bc35bcfa393cafdb54227bda10a1ca3d2be87189",
+      "sha256": "1e35c6552ca4158339888d064a90426ad43feab3cfa7f3000faed3c559e9d131"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/carbonara.py",
+      "git_blob": "1d0358bce29e32d1263e4b23be48d81454080244",
+      "sha256": "66f26449702abfca779a48a24ef0fd13f1f0dfb10445f902f92ed8c61e1aa50c"
+    },
+    {
+      "path": "mtkclient/Library/DA/mtk_da_handler.py",
+      "git_blob": "a7ef654cfde2dcf1674564da0a6bd545ffe58b84",
+      "sha256": "c598db162410590a8e16f51e49120e5b08cb1ad423bde2b658fba115fc16156c"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/extension/v6.py",
+      "git_blob": "118b4c648d3dea1cdfa902b0bf1faca791852a40",
+      "sha256": "85d91b1659edf00ce644d1406273f8b33cebad8cedcc8ac6341a500e8875f034"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/arch.py",
+      "git_blob": "c56b348e13178308b737dec045203b0cf2fa1f07",
+      "sha256": "a9cee08724757634825dc48bb0c10f0b035a0d2e83272d4b0eeb4e50692ed36b"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/kamakiri.py",
+      "git_blob": "4f8d75f82c29032171b047a9e594559d8632212a",
+      "sha256": "1fdffb0e9469b702070390490ccbcb6643320ea01a397ae2961386af9059498b"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "git_blob": "1effbaa9fa2e229af9eb5bf70d1a5e281c80ed46",
+      "sha256": "de0bb70c31754e3a96dbb9777446379052b07ce44b95b1b352a53900b44aae83"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/arm_tools.py",
+      "git_blob": "70edd743815b81b96a2c5a8909c9a62decba7bb3",
+      "sha256": "207356cf9a575e008609bd24979cfb8b0fae487a8a004e0c06c90f9cc14f23d2"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/amonet.py",
+      "git_blob": "8e1938538b96e2bb478df4c58fd9d7e72e1a679b",
+      "sha256": "f2a29d71020a6cfa89b5ee9c1461dc4bb21a705cc78321e45042e94869264a32"
+    },
+    {
+      "path": "mtkclient/Library/Filesystem/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/hashimoto.py",
+      "git_blob": "f6f686de72842431b035c1415e6e7bf7dc2d18bf",
+      "sha256": "0be4b3d93db008cb7f39b59a290c5bc4d5801ffb0481fefbe97cadf29e8bcfcf"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/aarch_tools.py",
+      "git_blob": "fec31ac7cc2c0b2fc1d2721f513d57622bfb79a2",
+      "sha256": "b233481d3b7861383f0eb9d41468a0653aa06f613bd0ee1c3b3a427fe09ca125"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto.py",
+      "git_blob": "c105cc05fa58e09b762cf010234fdfd98d73f39b",
+      "sha256": "95c01ba2e24217dbc057efdb2cf8e01e6acbaf0e3102b0c78ebd8407cee00793"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/kamakiri2.py",
+      "git_blob": "080f3fdf5a245a3c62bf309684dbd5d7696aadd1",
+      "sha256": "b5d0031c713a18d34b25eb1c6d63d470597e128a00ec85d56f74fbb3322b4693"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/cqdma.py",
+      "git_blob": "13c3e83fc1d6eb76db3fdf49ae0cdd2b6283ab95",
+      "sha256": "d978579ff17b7221206c575edc86bbfb8b0aefb5c9d8255e840203b30ff3fb67"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/kamakiripl.py",
+      "git_blob": "1c2a980ef09f8f1a2a2e85e83e1a17cfc73b0475",
+      "sha256": "65da52a700754a6cdb76391d39e3aa3391bd7a959fa577d50d3c268b98a020a6"
+    },
+    {
+      "path": "mtkclient/Library/Filesystem/mtkdafs.py",
+      "git_blob": "490d2166929cbd316b54f7534d6c54c435ad0467",
+      "sha256": "eaf750718ceeb5ae695d6c6fdae2a024ba2031080c2f8de614dc8c534e17c981"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_dxcc.py",
+      "git_blob": "f99d9159d548823bb568370a13b1526adf193f7c",
+      "sha256": "9edf449ccf2c2c2b261374f5bdf4559cb92b902ea2bb4a084591e288b2fc4026"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/__init__.py",
+      "git_blob": "27600457bdb9c9b112f7ee3562278a8aff2ef2df",
+      "sha256": "ce758f7a0ba5a8dca23f1b029d80153fa55e16466bac65348b7e3f4c9688b357"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_ssr.py",
+      "git_blob": "5c7074fada86f3cc556ab5329a52aa172f66ce1c",
+      "sha256": "ae30e17e05a7d775d27d1c09b470f5c58041c019d4e81ebff9a3afcc5c4de02d"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/heapbait.py",
+      "git_blob": "68196a190697ad9caad91e72d599c42e87d30921",
+      "sha256": "8e73361cf481d343a1c22c8ce06733d7eb2ae74c08c9da76f41990c44ebaeeca"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/__init__.py",
+      "git_blob": "13d02b1b492cb7c2bcfefa97a762ba3925102cdb",
+      "sha256": "858e9ea05c6504c45cf0af5d50a64a9ee13af002e54a614c87eb936ebfb9dc1b"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_sej.py",
+      "git_blob": "ae5e9867ed9d9fcca698c475974b11ee47673224",
+      "sha256": "4e3bd5c20a106ca2525b02e3f974a34e5cb1a4b0f0abc00f599710f6cece7f90"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_gcpu.py",
+      "git_blob": "9aba33e43dd05e4749246868e6df069fe7a111e9",
+      "sha256": "13e1aa990a5cf6723345271f234cc76da8789be23b75e91081a33bf8fdb2eb32"
+    },
+    {
+      "path": "mtkclient/Library/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/gpt.py",
+      "git_blob": "9de7fb853d24842a20e8ffdab796cf62959bf274",
+      "sha256": "dda999bf88177c25fb877883f2ff8a54b63ea0cad5e77ef87aab4183ad960271"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/mbr.py",
+      "git_blob": "f9c789ca1c70058cca617d72153a4de277adbd07",
+      "sha256": "2be2dfd00d6f0f3f9d89bfaf446e68b3f93abb076e359dad86176942588387e1"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/seccfg.py",
+      "git_blob": "7763ca18d943064f038390ad89616bbeabb3245e",
+      "sha256": "1bbe49f9fd05cc1788f5b38d523d0c062f8199d2a2ec3b7ca1a0882892e755ab"
+    },
+    {
+      "path": "mtkclient/Library/cryptutils.py",
+      "git_blob": "bbea4f75c529c8f417005d65a9f30678f532f487",
+      "sha256": "e431e7145fd3acf62d26f3e66a23adf0bafa6fac64aae4f265f93a448268c836"
+    },
+    {
+      "path": "mtkclient/Library/Port.py",
+      "git_blob": "2c194b097ba7fb607f78b16093b8b8dc68711d26",
+      "sha256": "f1febf33a0e6a9eb57392804166ea975384ce0ad3925ca2e9561462f786a3720"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/pmt.py",
+      "git_blob": "de11bc771912bb37fd0ee57af314ef9e72830fe6",
+      "sha256": "ce080d841d9e0d7d2c3b35eb1636740a499190b237c8bcd6b5e920dcfa97ade4"
+    },
+    {
+      "path": "mtkclient/Library/exploit_handler.py",
+      "git_blob": "082b3ce1e5fe8b16a19053dc5281ee5329afa4b2",
+      "sha256": "8e127fcaa04f35d13685e9c475f1e05871a2faaa21956c443c6d43c7b9b93134"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/bpi.py",
+      "git_blob": "5efe02722e84253624eb36ccbf0bf092c4fe0582",
+      "sha256": "815f1e8d97873b67cac95fdc3bcb7b0baa66dc7461d7e629dac82dd883dc05ce"
+    },
+    {
+      "path": "mtkclient/Library/asmtools.py",
+      "git_blob": "d8aa976b909e18a7a0b81604c2933ce08f93d4ae",
+      "sha256": "abcb52a86820249a017bba2d0849c9f629edecc9c9f198f8f074ca1b340aa27b"
+    },
+    {
+      "path": "mtkclient/Library/error.py",
+      "git_blob": "affaff4cd6bbe401fe50f1bd19989b64b6f2abc1",
+      "sha256": "24f08602308a54905c140ee794bf32ef08301ecae24ccc378e8fa7b6c05bcc33"
+    },
+    {
+      "path": "mtkclient/Library/mtk_crypto.py",
+      "git_blob": "382b011985508195be00b81842ec8586b2907c1c",
+      "sha256": "045cd30a5629d8f512236d36ca94ebec2af9740aa8a1575655c3d70fd5532232"
+    },
+    {
+      "path": "mtkclient/Library/pltools.py",
+      "git_blob": "45de982f7649f588a487859957ca9a6200df4e18",
+      "sha256": "0ffe210ab5ce1871483639543c8b0cb17363a57318d7bdcb2e94001793f92089"
+    },
+    {
+      "path": "mtkclient/Library/partition.py",
+      "git_blob": "0d95c55be5e1cb21ff2256987f26e6199b293495",
+      "sha256": "ecb848d1cf90244641354c3a9ad06ea1a40f829d12c32c7c39c0e44222c40a4a"
+    },
+    {
+      "path": "mtkclient/Library/ebr.py",
+      "git_blob": "5faaabce4e0cf97fa7a41e7e76ce265a98fb300d",
+      "sha256": "2c6aa0ba4911bfb8415559cc8c6a929478bfb8e57bd598dfe8a52e84cacfb3f0"
+    },
+    {
+      "path": "mtkclient/Library/realtime.py",
+      "git_blob": "d4fdce3a5f2deee6cd6c4f927a5b85fdcf578dbb",
+      "sha256": "c61b074ca2f1d0ac0a2212c6688d1fd785e39040dd7cb31c60a168923e3d1400"
+    },
+    {
+      "path": "mtkclient/Library/settings.py",
+      "git_blob": "9efac7cc04b596c880b11e818bccac1dfefb3490",
+      "sha256": "c62ce17400066823f6bee4958af8c916e1a4c4f456958a5541f8628bc5a3fbaa"
+    },
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "git_blob": "c7434697b14253aefe15c74c739c4832484cee97",
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68"
+    },
+    {
+      "path": "mtkclient/Library/thread_handling.py",
+      "git_blob": "6ddf13fe33fd7ccbe14e4d22a54350a2e05e73e6",
+      "sha256": "dbd5112304917eea2b813d660cd0be7fbb4d84d4d2afaf430ace2616a465d22d"
+    },
+    {
+      "path": "mtkclient/Library/mtk_main.py",
+      "git_blob": "ab3cda283ef63be72f7ae1669bb6ea836af0fc1d",
+      "sha256": "139c45d116a9b866c55c03a0d13cf64e2bc17054ff39a96cb0a9d877f58c0129"
+    },
+    {
+      "path": "mtkclient/Library/gui_utils.py",
+      "git_blob": "efb02f0cf9d55cf5445a937d74becd110890b600",
+      "sha256": "11777a65a7d2ceef7dfa8e619b13c60843b101f723d88f4b41ee015cefcbc711"
+    },
+    {
+      "path": "mtkclient/Library/utils.py",
+      "git_blob": "45b9c37341ca40a22c4cb3b867df79a61025c4d1",
+      "sha256": "c5a2196a37341d97b5626fa9c16a7e3b42cec36980beef36cee163a5e46dc8fa"
+    },
+    {
+      "path": "mtkclient/Library/meta.py",
+      "git_blob": "1f93d018aac6f561ed6b3d89fce59aa6f7b31cde",
+      "sha256": "75d3446c7b154adb2358b5cace54a99c32be8e41666a858fa8460538be7b400d"
+    },
+    {
+      "path": "mtkclient/config/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/config/payloads.py",
+      "git_blob": "ee7777df910b83a999679a729679eeedefd8aaa5",
+      "sha256": "0ddbe924cb9fe3f6a5361bc4dce9d7ddc37bea52fe153cf2ba8aa8484325e0c8"
+    },
+    {
+      "path": "mtkclient/config/devicedb.py",
+      "git_blob": "b611115064164c022b029434eee118efab4d635d",
+      "sha256": "51ff1481696784c5eca04df1d4205d61241d144b27dd54c559aa311433965b74"
+    },
+    {
+      "path": "mtkclient/Library/mtk_class.py",
+      "git_blob": "8f0a1016c1902eb11dcd91a2d805053c50788c0e",
+      "sha256": "3970b42c3f39e8d5d284ea2f29b6840e8fcf05f9f1cb6edb831f60704bff1f6f"
+    },
+    {
+      "path": "mtkclient/Windows/libusb32-1.0.dll",
+      "git_blob": "fd7a9414f250c677bc46a7961c7e518c848f915e",
+      "sha256": "0760140d425269244c20bc4fb55f495598ab2b0e9db1584b28295799b18d90ef"
+    },
+    {
+      "path": "mtkclient/Windows/libusb-1.0.dll",
+      "git_blob": "a2ef58e170926915033865183bae36aeee0ff7c3",
+      "sha256": "6b24b0ee1a59cbae385dd15b06eddf2c72b2ff3a875ae279883a880136c59ec8"
+    },
+    {
+      "path": "mtkclient/gui/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mtkclient/config/usb_ids.py",
+      "git_blob": "5e1dc51e293eb313f32647e40c2fcba4d00557bf",
+      "sha256": "97ef51836b4045c8aa205232d343602187ab765299794926df7d0315cd585b52"
+    },
+    {
+      "path": "mtkclient/gui/connect_info.py",
+      "git_blob": "0ea16fbd25b66e903e4424b4a7499d996bd01b1f",
+      "sha256": "f3b78f48d76e0618c672f1cf5f36a0e00c8de30ac9acc6903889215de30d792c"
+    },
+    {
+      "path": "mtkclient/config/brom_config.py",
+      "git_blob": "8bb0c14757a0839a67dc48bfe377d153f9ec274a",
+      "sha256": "a8d94deac4fb3d485e7ed9fcc17aa9fca14f19307c1dea5daf429cf7a1e1de63"
+    },
+    {
+      "path": "mtkclient/gui/connect_info_ui.py",
+      "git_blob": "b486253fd00c406840a944bfe77dcec3e7003be4",
+      "sha256": "54b57d3be591669e14bfee60206ca99df54d6b047722b36bd199efdbdf94421f"
+    },
+    {
+      "path": "mtkclient/gui/collapsible_splitter.py",
+      "git_blob": "7f35760efb87a1f45c1216d243aab77b50d1fee1",
+      "sha256": "fd21842bb12075322491a4c60577378f8951aa876b15509b922f1bb8f3ed7324"
+    },
+    {
+      "path": "mtkclient/gui/readFlashPartitions.py",
+      "git_blob": "82cfc187cc80a851a2eb2ae22c538932e0a08ee3",
+      "sha256": "65be385d52acc3a2cc81743df1e27a8d5b801e894273faac043ce58ec29a54f8"
+    },
+    {
+      "path": "mtkclient/config/mtk_config.py",
+      "git_blob": "869d889a801dd55ac89cc37605c5e1550d1ad984",
+      "sha256": "9111889fb719d1989e1a10e7997994971d3d5381a813f689ae59cd4b0f872ddc"
+    },
+    {
+      "path": "mtkclient/gui/themes.py",
+      "git_blob": "be045ccf35fb86f5da110bb88cbfe7b62a1e20bd",
+      "sha256": "a6816e42462f8e6368c8642c7cbbf4f5aa8a10370a36c33ff6ab2ada50429ea5"
+    },
+    {
+      "path": "mtkclient/gui/toolkit.py",
+      "git_blob": "99c055762583dd2bb93895e14e18d6c42526c42f",
+      "sha256": "45b620cbecbdc8276b67d997beba8eaf40f2f5e8fdf2717285594f8d2fe65cff"
+    },
+    {
+      "path": "mtkclient/payloads/generic_dump_payload.bin",
+      "git_blob": "e0807545fde52dbe14e1af44f08ab3888263e80c",
+      "sha256": "96eedb2f03a4c2839f289e3e437f574fd7d85d15d8339201eaa6ac00f4734b25"
+    },
+    {
+      "path": "mtkclient/gui/writeFlashPartitions.py",
+      "git_blob": "3513122de46675e6f2858ebfb6e50663ddfc402e",
+      "sha256": "a234bdb995ce0dfae214819f062c024810399c1dc4b1bd0c2c2231ccf46dc50f"
+    },
+    {
+      "path": "mtkclient/payloads/da_x.bin",
+      "git_blob": "23d266249437d95c5ed1d1d9ef2b9f348ae5f4ac",
+      "sha256": "b83ebbbff36e330713080e719856241065e51f732658f4b931399df0e17e00fd"
+    },
+    {
+      "path": "mtkclient/payloads/generic_loader_payload.bin",
+      "git_blob": "bbaacaf9206ac71a9dfd61524bf7ad9e655cbeeb",
+      "sha256": "e887a930a9477ab9a1e56b05b31bb5a58bed30664045338d97f7fe6dc71d3f54"
+    },
+    {
+      "path": "mtkclient/gui/main_gui.py",
+      "git_blob": "17a0c7eee372fd71cc467f12c63be50717723961",
+      "sha256": "5a8fe4b3d7666671cb620f88ad415bf26ee4838039908655b9ccfb70f14ae69e"
+    },
+    {
+      "path": "mtkclient/payloads/da_xml_64.bin",
+      "git_blob": "db052c820c434f447cdcd34b15108fb7d803e23e",
+      "sha256": "b8509bd63044bea612e32425642b2f54b340e1cf967006f01ac4faae6541ab28"
+    },
+    {
+      "path": "mtkclient/gui/toolsMenu.py",
+      "git_blob": "af2543964d12ec23344826ac9df7e3fa705386fa",
+      "sha256": "91308ea133ad0ac8d12646984203fe6c5510cfd6dcd3977a0885762f7230f7dd"
+    },
+    {
+      "path": "mtkclient/payloads/generic_uart_dump_payload.bin",
+      "git_blob": "30eb4018b5165dae6a6f4845960a3179e5f5a169",
+      "sha256": "f8490e2a765446dc26cff1377059841b9860f34d6f4ff6ee2f3163eab27a728b"
+    },
+    {
+      "path": "mtkclient/payloads/generic_sram_payload.bin",
+      "git_blob": "aa4ef9772b0f025c9a433b296ac747c698fd1c0b",
+      "sha256": "713fb9cc9b418920b24c58a2bdd1d0d3050515ef37e8e5e1e405794cd8b9b46c"
+    },
+    {
+      "path": "mtkclient/payloads/da_xml.bin",
+      "git_blob": "9a053a8900453973a0c75a6d3a2723f91b897844",
+      "sha256": "befb2820693fa774eb0da9b9bb8751594dc5c99cf3749dfdc332d7038c058d7b"
+    },
+    {
+      "path": "mtkclient/payloads/generic_patcher_payload.bin",
+      "git_blob": "9cc3442687f631f472a8b257b4548a5819da904a",
+      "sha256": "6ff58af2867de71abcbbe22c3de289eb747e56d9a220fc23a64fcb8f592bc24b"
+    },
+    {
+      "path": "mtkclient/gui/eraseFlashPartitions.py",
+      "git_blob": "de1215dabaddd3b35338c2e4ea9cf59c17876817",
+      "sha256": "cde9aacbe5f16f3e1dff087fa15b853a3047fb018802e8e55f75e6f95f6430af"
+    },
+    {
+      "path": "mtkclient/payloads/generic_preloader_dump_payload.bin",
+      "git_blob": "706d37b80a757f8651038ec70fe4fd3e97256e04",
+      "sha256": "3dbf96661cced9f61ae29006d05ae8bcd38928013f978a00ea788aca998791f7"
+    },
+    {
+      "path": "mtkclient/payloads/generic_reboot_payload.bin",
+      "git_blob": "6888ce3e43d3b866e9ec9fcd0a9b1521a77b4905",
+      "sha256": "f9c276cb23bc626753286de8b1ff96df5e4b25be3f59bbcf3a8032ac439fe108"
+    },
+    {
+      "path": "mtkclient/payloads/mt6261_payload.bin",
+      "git_blob": "e669e8ef8c09ba4f57a6aed178b0a759755a4fd7",
+      "sha256": "cb3b04e1fbce58cf12adf61f78558ae5879d693f468f2681bfc948be5f25b06e"
+    },
+    {
+      "path": "mtkclient/payloads/heapbait_arm.bin",
+      "git_blob": "cfb43a7fe7368fb8fe42d40b7f220250ed6f2959",
+      "sha256": "91a4661dd8f56d8c5762e8e89c83212b69153ccba4e9dc774b0df0bc0d5dcf54"
+    },
+    {
+      "path": "mtkclient/payloads/generic_stage1_payload.bin",
+      "git_blob": "b8cb02dfb77343776d2ecdebb2ba72fbc4bd7574",
+      "sha256": "0cec003fb8b594ed374270debc0aefb198d03d66d0f4ef3db5d5f1e706098296"
+    },
+    {
+      "path": "mtkclient/payloads/mt6582_payload.bin",
+      "git_blob": "b8090decce75481a7a130792632c39fc9a6c17fe",
+      "sha256": "6d077a31541128d5974dcf0ace5805d5b7772a6d809339d76a998d68fdc22f38"
+    },
+    {
+      "path": "mtkclient/payloads/mt2601_payload.bin",
+      "git_blob": "d2dee25b417e4b60e1e63dbd1ef3afdd3870ddd7",
+      "sha256": "13e31e02c9ab0eaf2c076abaf436117acb1db1faf098c3d9855b33e6723f0d56"
+    },
+    {
+      "path": "mtkclient/payloads/heapbait_arm64.bin",
+      "git_blob": "813efa043fd8e8de59c52ac44d2785af63e2168b",
+      "sha256": "89413d885b92bb9dce2d0682fa0a88d398da1214d412ff93250dbea84b6d7b48"
+    },
+    {
+      "path": "mtkclient/payloads/mt6595_payload.bin",
+      "git_blob": "2b7ed239fad0201489b010ccc13c2796ca952475",
+      "sha256": "8f136d8363ebb8d2e96ad618c7cc5bfa099c3b9b8bea42ccd3e5d0720f05d67d"
+    },
+    {
+      "path": "mtkclient/payloads/mt6575_payload.bin",
+      "git_blob": "22cb3c275614cef666c4cf6446337655bb5efc4d",
+      "sha256": "401376830343b431bb1960d86f2765b101108e997a54357ff7676e8fad6f6f2f"
+    },
+    {
+      "path": "mtkclient/payloads/mt6592_payload.bin",
+      "git_blob": "fad70a92150d7112bc9b9e18bed674b9341af674",
+      "sha256": "7b2397eab429f351ff2cf89bd02da1f635f8f759380f4bacbee88c62889e6aad"
+    },
+    {
+      "path": "mtkclient/payloads/mt6580_payload.bin",
+      "git_blob": "9b1f877f340823189df73a656b3da3a2ea444901",
+      "sha256": "d943075dd1b6710bf44abcbabdd6911be76efb97d99ec147f2ed4a8b47f69dbc"
+    },
+    {
+      "path": "mtkclient/payloads/mt6572_payload.bin",
+      "git_blob": "e97fc505552bc777e79bb36cfe9469efc3db9f1b",
+      "sha256": "4a7549d1c89a2a952bb6a8bc074f0a2dc2c48416ef1faabbd0d544fa32241a23"
+    },
+    {
+      "path": "mtkclient/payloads/mt6735_payload.bin",
+      "git_blob": "9695b6437c599d9e09939943ca8c5236f601c371",
+      "sha256": "c67f8c0daaf578dfc63ecfc5e34db84225f83a3a338e8c919966356e8391718a"
+    },
+    {
+      "path": "mtkclient/payloads/mt6752_payload.bin",
+      "git_blob": "4bfef627a1acf827b3fdcbb366f69b8ed1583840",
+      "sha256": "29a6596e14922c9d8a9f37df0f4cab5dc5e85ef38d613cca96c8219ccdf64a95"
+    },
+    {
+      "path": "mtkclient/payloads/mt6739_payload.bin",
+      "git_blob": "16ce127db6022ed5053a6ac7f6f9049a6415a184",
+      "sha256": "5b1befdd6c58d934a05d8e6d4ad259e296e3b9d2801885708b6bfe00a40babf4"
+    },
+    {
+      "path": "mtkclient/payloads/mt6737_payload.bin",
+      "git_blob": "995972f26cf481ac5ce838b4ccca49e54c1e9380",
+      "sha256": "3520c57b0fbb90c64469900ed46e78a08490da0e370581b02ee52882c94c0e43"
+    },
+    {
+      "path": "mtkclient/payloads/mt6758_payload.bin",
+      "git_blob": "27408507a0e1c9cacddff974f497345eddea3c21",
+      "sha256": "632bb2cb90afefd593b71d210db626b99c0ebff7413752d9b3973591833ac362"
+    },
+    {
+      "path": "mtkclient/payloads/mt6755_payload.bin",
+      "git_blob": "a54a99c1241d4706ba9a851e08103a4eb0bbab2f",
+      "sha256": "71308466f4fdfd61aafd4490a32f2ea020930352c2fdc2033ad487b2a82593dd"
+    },
+    {
+      "path": "mtkclient/payloads/mt6757_payload.bin",
+      "git_blob": "1f59e1ab4d47a1058c25c405aeb63eb41c2a3d25",
+      "sha256": "4d732f2183f4a32560972db52e2ef20d730729b4065489778550e095c9183f82"
+    },
+    {
+      "path": "mtkclient/payloads/mt6761_payload.bin",
+      "git_blob": "53b588615984f966d69d9db7cc42b395b9c9119e",
+      "sha256": "e15edfddcca2702d7c5f2796531889947d3ba666bed8152acf71a27f13834a2b"
+    },
+    {
+      "path": "mtkclient/payloads/mt6753_payload.bin",
+      "git_blob": "4feff6783028a42c4296e9d16a762cc3eab7e95b",
+      "sha256": "f608f04ba6b02a9039962c93c6d677b99aaa746e1962b320ade1baf3175d35ec"
+    },
+    {
+      "path": "mtkclient/payloads/mt6781_payload.bin",
+      "git_blob": "f3322dfe08a9b20927394bf7720f876a28eac95a",
+      "sha256": "47f6d92ad871b7aa0ddc7c5d15f6246522872c0851daa40e97acaf9d426876b0"
+    },
+    {
+      "path": "mtkclient/payloads/mt6785_payload.bin",
+      "git_blob": "330415c772347dbc9a29d9e9f65bff33bcb4c83b",
+      "sha256": "eec7575441c2099bfed1fd20ee3fbe85d5dbba520dde49d785996b26d78cceb5"
+    },
+    {
+      "path": "mtkclient/payloads/mt6795_payload.bin",
+      "git_blob": "0c0fe5a06884883de814cecbfcdc8f963a7f617f",
+      "sha256": "6fbcf8af42028ced3b74cebc19df8093283f28d570915901a5db249a77486472"
+    },
+    {
+      "path": "mtkclient/payloads/mt6771_payload.bin",
+      "git_blob": "70fa67c93df1c1b6fb9cc563a8825c86b0c9a0ec",
+      "sha256": "898654d927bf5a9bcff40702801e1a498d013abcc4de406bbae1aa025a65e637"
+    },
+    {
+      "path": "mtkclient/payloads/mt6799_payload.bin",
+      "git_blob": "7713015677134252f18dda46a6b965e57d5261e6",
+      "sha256": "c0d5e29a81a0109dcfa16f39d279e1f091ae35333b5601c56cfa3c1f8c88261f"
+    },
+    {
+      "path": "mtkclient/payloads/mt6797_payload.bin",
+      "git_blob": "bae0250ec8996efe4a6477d7b06b9c2358ad9d48",
+      "sha256": "2464e4e3a7dd48ddf03240b39fd569d786ec9ac8cd134cfa0ef53997f786d86b"
+    },
+    {
+      "path": "mtkclient/payloads/mt6768_payload.bin",
+      "git_blob": "962c1700db11a8206082e1ff859251d7dfa0bc4a",
+      "sha256": "1374139e112b7961abf6571582c8330d879d956ff33ed39bd51c882ddec8a6c5"
+    },
+    {
+      "path": "mtkclient/payloads/mt6765_payload.bin",
+      "git_blob": "bd3017363e32abe7c46e60431efe0f6bded38a65",
+      "sha256": "9da60fd8d35527e9d1d643d8d81c6c4560e6cd5640c904a0e9a7206ecd582476"
+    },
+    {
+      "path": "mtkclient/payloads/mt6763_payload.bin",
+      "git_blob": "e000350feb9eb6b5c3d0e58364312ca5489d05e0",
+      "sha256": "98a569c5bdb6a05b9a2d93d484e926489415d065ecb8991bdf1033ca687fef17"
+    },
+    {
+      "path": "mtkclient/payloads/mt6779_payload.bin",
+      "git_blob": "85271990149c0a968441f1ba87fbf0fdc0e87f53",
+      "sha256": "859c6dce3baf937bdee85d5acf0061b584b5960057fff25e452f9d326adc7116"
+    },
+    {
+      "path": "mtkclient/payloads/mt6893_payload.bin",
+      "git_blob": "bad843aa6a8d590629640743af93c36dbb430357",
+      "sha256": "6a3063c6227401afce591ce9d5699062bd1b1042c636bfed3fcd00fcd5e70952"
+    },
+    {
+      "path": "mtkclient/payloads/mt6833_payload.bin",
+      "git_blob": "c9edb69ad35c078faa07be1e25566eba4c1332ee",
+      "sha256": "921590545eadd986ebdb152e268afea672e0d0930c43a0b25c5743623569ef03"
+    },
+    {
+      "path": "mtkclient/payloads/mt6873_payload.bin",
+      "git_blob": "d6cad18f2968d0521b81676082baf93041420e09",
+      "sha256": "19a10d6fba9d0fef479e36b71569cee5c986aeafd83816ddb3e2d5a225ea6099"
+    },
+    {
+      "path": "mtkclient/payloads/mt6885_payload.bin",
+      "git_blob": "6b99ba85b3db979b138bd48cfcc4b97b1b72e0b1",
+      "sha256": "77378f8f83d2a36e478a388b1704af466515e054a92874bbb9dd53845a57610d"
+    },
+    {
+      "path": "mtkclient/payloads/mt6877_payload.bin",
+      "git_blob": "0aa7b7e6ca49dbe3afcddf7e2dc698a53dcd4db0",
+      "sha256": "514beb6a882f0c204dc1ff64172968094e0fd229fdbbe6ade331bd0beb9c853f"
+    },
+    {
+      "path": "mtkclient/payloads/mt8163_payload.bin",
+      "git_blob": "34cd6b85a1a2c1ffa542ce66c8eeb8aa107b56a9",
+      "sha256": "92185a7501513c4836b68dd7baed19526c5e6dd3a7171a26fe4672398c49ffae"
+    },
+    {
+      "path": "mtkclient/payloads/mt8127_payload.bin",
+      "git_blob": "6a1afbf05b17be5c1c38b15f4f7797623e27e4db",
+      "sha256": "8b7f22771078ddcc6515b97ea8e2f12eda79eac969cd6ca014624cb2575f1e09"
+    },
+    {
+      "path": "mtkclient/payloads/mt8167_payload.bin",
+      "git_blob": "738fb1ad75d2715661a3e49bdc74b6afd54d823c",
+      "sha256": "7bf98fa19b32eab41cf26578fe5017b3e277efa22f49e134ed4192c4634c8ecf"
+    },
+    {
+      "path": "mtkclient/payloads/mt8168_payload.bin",
+      "git_blob": "682c9afddd1150a13001c096f362d93ff4e16402",
+      "sha256": "5438a8b24766eff2c59292090bd9ef85b62dc986b8c8bc690e03f56997fb7f5c"
+    },
+    {
+      "path": "mtkclient/payloads/mt8173_payload.bin",
+      "git_blob": "9c46f2139a716389bcf01377d15f58b562f5790b",
+      "sha256": "1fcc63e4eae171be11a89d5d49074ae4cf4120ec97a0b9571f267dcb922cdbf3"
+    },
+    {
+      "path": "mtkclient/payloads/mt8516_payload.bin",
+      "git_blob": "290e3cbda5e451fa95bd277bef5e57c60b935b54",
+      "sha256": "001f5034237252e10c1a2b3046fb5340a5cfddfb36c150d9964fea7b8afd5a64"
+    },
+    {
+      "path": "mtkclient/payloads/mt8512_payload.bin",
+      "git_blob": "0edc62f82ac1931f35d075e0de4c185570fd31b6",
+      "sha256": "8ddddd00d6a54e872c341c65a178ec05b705fc2ee02974a634b60274506fb9b4"
+    },
+    {
+      "path": "mtkclient/payloads/mt8695_payload.bin",
+      "git_blob": "1eea0f6adaaa6eecc4b311542a9c7d2e5a9bbc56",
+      "sha256": "16bea9ac9fb67fcdf6a58912a7742d2e37d6cb4c3584a9101600f94600aeb29e"
+    },
+    {
+      "path": "mtkclient/payloads/mt8176_payload.bin",
+      "git_blob": "0613f5d81bc194a927844bd5041021eceabaefef",
+      "sha256": "8c38525214cbc0d22a29ee83bf4e5ca7e573ba58264f95e4dfa6472a17877d09"
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob": "badc64069ec43f8cd43937114fb350503f24b0a8",
+      "sha256": "ce564c45392a3cccb84dc70694ad5e97b3dd1646f3a7907ab5ca8f5e6c3aa95e"
+    },
+    {
+      "path": "mtkclient/payloads/mt8590_payload.bin",
+      "git_blob": "e452fe94dc65b781960ef84b2169d12df295aff9",
+      "sha256": "f1c7aa26e28b82b37f2e9827c99996030af45ec8852e492a141dddd1bed0f95e"
+    },
+    {
+      "path": "mtkclient/payloads/mt6853_payload.bin",
+      "git_blob": "01edf3fe40b86188177248d06e1ff0e6e05a787a",
+      "sha256": "edb8c91ae9eb13c83d6172d25fc8e835510fe2a9371e18597cc7d34ac85c82db"
+    },
+    {
+      "path": "mtkclient/payloads/stage2.bin",
+      "git_blob": "3e4fcbbd11f816c22aded4930bc90089e6ff3af7",
+      "sha256": "94e3e2ffbe1b36e48f7b5a6adb0371c651adba44860af3f4126e6f1091908fdf"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "9dd7eab6ee4fa9124cd5657d0b03c5ebaab5f161",
+      "sha256": "6af14393b9e85263a486c8cd70067a442587f64e274cb85a00baa3ac69a43954"
+    },
+    {
+      "path": "mtkclient/payloads/pl.bin",
+      "git_blob": "0fac9d3eba51163ca3602453f4ead6e0d9a47347",
+      "sha256": "330de824646e1f49c4784e2f515fcbb1e47132ea7ecc8ceb034c6c4f42e665ed"
+    },
+    {
+      "path": "stage2.py",
+      "git_blob": "adfd89fa12966e2dfc6caaed85af012a2b8af803",
+      "sha256": "851cf6cfb5c3188b5a3fbf57453db49805b276cc7881550b8fbeea35c2d58134"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "git_blob": "1ba72e61e2544ac99bbe630316693b6b9001c154",
+      "sha256": "aef234190ccb8145d2e3b8459741e9adb70f2caa8481aa216c1b25152afaca1f"
+    },
+    {
+      "path": "Tools/tee.json",
+      "git_blob": "81ece8bf8d4fce4a19eba9a4f8fba21f8ed5b1e5",
+      "sha256": "1e985e062f1fa3a14407fb216ba73341385be5696858489f1b1a48364d4dbf63"
+    },
+    {
+      "path": "mtkclient/Library/Filesystem/bin/winfsp-x86.dll",
+      "git_blob": "0dacb65250538087ab78445786a82b61e98a53e5",
+      "sha256": "a94c089285391bbfde1c0a5ef29fa1f7fbc0331bdcf90336836dc0440035ac05"
+    },
+    {
+      "path": "mtkclient/Library/Filesystem/bin/winfsp-x64.dll",
+      "git_blob": "34cc37724de24832941b8c776b1a09a2694ccc81",
+      "sha256": "ea3cf26f4958e26126882ec7addd6f89c1430ba9371e3c5109240bee511d6f54"
+    }
+  ]
+}

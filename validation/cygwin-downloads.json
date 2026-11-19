@@ -1,0 +1,104 @@
+[
+  {
+    "name": "bash",
+    "file": "bash-5.2.21-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/bash/bash-5.2.21-1.tar.xz",
+    "sha512": "c3a5594f1c248dd27a3b5aa10c31fb1651072eae878479d3d8cab09c28354ce4509a2fe230f176ad200a6484a561bc10c2dc9c74c4e9f03164190dac2e683d65"
+  },
+  {
+    "name": "cygwin",
+    "file": "cygwin-3.6.11-1-x86_64.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/cygwin/cygwin-3.6.11-1-x86_64.tar.xz",
+    "sha512": "1c33f8396d78eca035106325c5b90ff1165a6b78839f16190ec00f025067306522a23a5ec1b99557974e471649104cd31dad68685d2a544c31fb4494297a744a"
+  },
+  {
+    "name": "e2fsprogs",
+    "file": "e2fsprogs-1.44.5-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/e2fsprogs/e2fsprogs-1.44.5-1.tar.xz",
+    "sha512": "32730dee0384e1dd8557982133c98e896ceda8e445e0a794413cda32349ac429997dbc7a338d34480b22bafe624a83454fb8d22fbb3b90c771eb95ed345814e1"
+  },
+  {
+    "name": "libblkid1",
+    "file": "libblkid1-2.40.2-2.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/util-linux/libblkid1/libblkid1-2.40.2-2.tar.xz",
+    "sha512": "d931c47cce5a7caf18799a16ed526e0f0d0f82c0f6d0af952420d50d88f1e0f0ea9d6c07be72f9d0baa06a3299b2db8c3bd3c43d13d94400edc816e7c00da148"
+  },
+  {
+    "name": "libcom_err2",
+    "file": "libcom_err2-1.44.5-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.44.5-1.tar.xz",
+    "sha512": "3344fbc09364d789e92a81af5ba1e830dd47cef3392a1ee389a2fd49a9cc56a63afc78bebefb92c025d8222e6e454c114d572f0f395e5e20ede2b2266b0fe709"
+  },
+  {
+    "name": "libe2p2",
+    "file": "libe2p2-1.44.5-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/e2fsprogs/libe2p2/libe2p2-1.44.5-1.tar.xz",
+    "sha512": "9d56cd56ffc2488806588bce243761ce5a8719492ee974b6140a09253024a3e35242b398b92c80e873799ed7b909a14bb8d0f410879d83ab457d6db5dbb14430"
+  },
+  {
+    "name": "libext2fs2",
+    "file": "libext2fs2-1.44.5-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/e2fsprogs/libext2fs2/libext2fs2-1.44.5-1.tar.xz",
+    "sha512": "55e1ccb30354f84ac88762db54efc4d4d8d7475062935214795a26a48b7a72e897d4a870ff72c82ae3a7cd6924ff903ec52773f0b004d490a759b2cb2d7907ce"
+  },
+  {
+    "name": "libgcc1",
+    "file": "libgcc1-14.4.0-1-x86_64.tar.zst",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/gcc/libgcc1/libgcc1-14.4.0-1-x86_64.tar.zst",
+    "sha512": "5ac8a56e5eee285efcd6dbd05a473e795e181021d7194b8a98dfe2fa201a71f0abe2908e0b4c81490eb5ef472efaeac8e56a61a5f289eee4ad6e90e52a844ff8"
+  },
+  {
+    "name": "libiconv2",
+    "file": "libiconv2-1.19-2-x86_64.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/libiconv/libiconv2/libiconv2-1.19-2-x86_64.tar.xz",
+    "sha512": "a1b23e24e0a495e7163923bcf40a4b933403e0826cfc0d9bde785bc92c909b8c4fb94b1e6b2c0242f4328a723855e72ff3baab9f557ef855b7fe7a7d901b0943"
+  },
+  {
+    "name": "libintl8",
+    "file": "libintl8-0.22.5-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/gettext/libintl8/libintl8-0.22.5-1.tar.xz",
+    "sha512": "370a19af888bc7c9ed95cf8ade0d36d5e7cdb634abdebcba260cad61fa9a4cc05b5e748e315c9709f66861e8756b227d6757d529846591189e19ee2b2d00002d"
+  },
+  {
+    "name": "libncursesw10",
+    "file": "libncursesw10-6.5+20240427-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/ncurses/libncursesw10/libncursesw10-6.5+20240427-1.tar.xz",
+    "sha512": "08102f7a7083cb5663fecc46d819f2ece4123444a8f94c42300f03f7eebd40395f556c44b22ab58bf57321b44d9b8fb8b19358e535c7500d36e52d48b05dcca8"
+  },
+  {
+    "name": "libreadline7",
+    "file": "libreadline7-8.2-2.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/readline/libreadline7/libreadline7-8.2-2.tar.xz",
+    "sha512": "1d27576cf49b056f35f90ad933e39c5d946bc271ddcd109daa98f95b97123b428256827889ff45ca8a76409cdb1afd0146e99c9b70150b302538356512acfe38"
+  },
+  {
+    "name": "libss2",
+    "file": "libss2-1.44.5-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/e2fsprogs/libss2/libss2-1.44.5-1.tar.xz",
+    "sha512": "a434560c0b52e5a13ee035346a6d3217d8d39026abe9f4f3cfafed7a16daef33c1322a18bbd99fcfd89fd702812e3463fafa521e78617f478600846a46c5ca9e"
+  },
+  {
+    "name": "libuuid1",
+    "file": "libuuid1-2.40.2-2.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/util-linux/libuuid1/libuuid1-2.40.2-2.tar.xz",
+    "sha512": "3ba0c5d5a401c88796077e9f45164532408882f2f5d9f0ab99b2fdf6eb915917250124cde3653a7c53b648866e091aa3baf3304d0b243337f0d4e254a7631f55"
+  },
+  {
+    "name": "libzstd1",
+    "file": "libzstd1-1.5.7-1.tar.zst",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/zstd/libzstd1/libzstd1-1.5.7-1.tar.zst",
+    "sha512": "f89cdaa004487ec8c4796b8f56887c81f6f497873c1495b9cb585ffe6c8d6e6b8ad4b52617d5238075f965f1fe001da287d9a00d121590274b2d87672b415a0f"
+  },
+  {
+    "name": "terminfo",
+    "file": "terminfo-6.5+20240427-1.tar.xz",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/ncurses/terminfo/terminfo-6.5+20240427-1.tar.xz",
+    "sha512": "128fb04f188bbf2af3060416193c9879a9cbbf7e5486febf851f35c3d9d00b9d61a0e2bf4be575d2308fd665a224ce5674485dcfd071125c3a8d199a4b88a042"
+  },
+  {
+    "name": "zlib0",
+    "file": "zlib0-1.3.2-1-x86_64.tar.zst",
+    "url": "https://mirrors.huaweicloud.com/cygwin/x86_64/release/zlib/zlib0/zlib0-1.3.2-1-x86_64.tar.zst",
+    "sha512": "d79ba6098cadf6bf2f32f35d9cd54729293c64b3c9daabb9d080f52861a19db71544d5710fdbd61ff45e7c2ae4eecb3f2e3b8a1e3bc05695b8cfe01c7639c53a"
+  }
+]

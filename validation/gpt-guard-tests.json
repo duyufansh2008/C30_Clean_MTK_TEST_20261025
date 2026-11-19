@@ -1,0 +1,8 @@
+{
+  "valid_512_accepted": true,
+  "wrong_super_size_512_rejected": true,
+  "bad_crc_512_rejected": true,
+  "valid_4096_accepted": true,
+  "wrong_super_size_4096_rejected": true,
+  "bad_crc_4096_rejected": true
+}

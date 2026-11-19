@@ -1,0 +1,32 @@
+{
+  "strategy": "replace management implementation with an offline launcher and no-op framework compatibility endpoints; original framework jars are unchanged",
+  "removed": [
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libfileScanner.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libp4bu.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libsandhook-native.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libsandhook.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libfileScanner.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libp4bu.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libsandhook-native.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libsandhook.so",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64",
+    "/system/priv-app/ROM_523031602_GENERAL_DET/lib",
+    "/system/lib/libp4bu.so",
+    "/system/lib/libsandhook-native.so",
+    "/system/lib/libsandhook.so",
+    "/system/lib64/libp4bu.so",
+    "/system/lib64/libsandhook-native.so",
+    "/system/lib64/libsandhook.so"
+  ],
+  "replacements": [
+    "/system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk",
+    "/system/etc/public.libraries.txt",
+    "/system/etc/permissions/privapp-permissions-mediatek.xml"
+  ],
+  "zeroed_free_blocks": 4730,
+  "vbmeta_flags": 3,
+  "system_offset_in_super": 617611264,
+  "hardware_tested": false
+}

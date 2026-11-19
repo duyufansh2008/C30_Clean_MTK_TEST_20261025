@@ -1,0 +1,65 @@
+debugfs 1.44.5 (15-Dec-2018)
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libfileScanner.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libp4bu.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libsandhook-native.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm/libsandhook.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libfileScanner.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libp4bu.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libsandhook-native.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64/libsandhook.so
+
+debugfs: rm /system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk
+
+debugfs: rmdir /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm
+
+debugfs: rmdir /system/priv-app/ROM_523031602_GENERAL_DET/lib/arm64
+
+debugfs: rmdir /system/priv-app/ROM_523031602_GENERAL_DET/lib
+
+debugfs: rm /system/lib/libp4bu.so
+
+debugfs: rm /system/lib/libsandhook-native.so
+
+debugfs: rm /system/lib/libsandhook.so
+
+debugfs: rm /system/lib64/libp4bu.so
+
+debugfs: rm /system/lib64/libsandhook-native.so
+
+debugfs: rm /system/lib64/libsandhook.so
+
+debugfs: cd /system/priv-app/ROM_523031602_GENERAL_DET
+debugfs: write work/clean_launcher/build/C30CleanLauncher.apk ROM_523031602_GENERAL_DET.apk
+Allocated inode: 3948
+debugfs: cd /
+debugfs: set_inode_field /system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk mode 0100644
+debugfs: set_inode_field /system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk uid 0
+debugfs: set_inode_field /system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk gid 0
+debugfs: ea_set -f work/modified/system_file_label.bin /system/priv-app/ROM_523031602_GENERAL_DET/ROM_523031602_GENERAL_DET.apk security.selinux
+debugfs: rm /system/etc/public.libraries.txt
+
+debugfs: cd /system/etc
+debugfs: write work/modified/public.libraries.txt public.libraries.txt
+Allocated inode: 1861
+debugfs: cd /
+debugfs: set_inode_field /system/etc/public.libraries.txt mode 0100644
+debugfs: set_inode_field /system/etc/public.libraries.txt uid 0
+debugfs: set_inode_field /system/etc/public.libraries.txt gid 0
+debugfs: ea_set -f work/modified/system_file_label.bin /system/etc/public.libraries.txt security.selinux
+debugfs: rm /system/etc/permissions/privapp-permissions-mediatek.xml
+
+debugfs: cd /system/etc/permissions
+debugfs: write work/modified/privapp-permissions-mediatek.xml privapp-permissions-mediatek.xml
+Allocated inode: 1852
+debugfs: cd /
+debugfs: set_inode_field /system/etc/permissions/privapp-permissions-mediatek.xml mode 0100644
+debugfs: set_inode_field /system/etc/permissions/privapp-permissions-mediatek.xml uid 0
+debugfs: set_inode_field /system/etc/permissions/privapp-permissions-mediatek.xml gid 0
+debugfs: ea_set -f work/modified/system_file_label.bin /system/etc/permissions/privapp-permissions-mediatek.xml security.selinux

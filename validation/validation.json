@@ -1,0 +1,12 @@
+{
+  "unchanged_regular_files_compared_by_sha256": 3669,
+  "original_inventory_nodes": 4522,
+  "modified_inventory_nodes": 4505,
+  "only_expected_paths_removed": true,
+  "replacement_apk_matches_signed_build": true,
+  "product_vendor_lp_metadata_and_all_bytes_outside_system_unchanged": true,
+  "vbmeta_only_changed_byte_offset": 123,
+  "vbmeta_flags": 3,
+  "filesystem_check_exit_code": 0,
+  "hardware_boot_test_performed": false
+}

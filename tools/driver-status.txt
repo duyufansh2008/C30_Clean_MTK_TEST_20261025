@@ -1,0 +1,9 @@
+﻿UsbDk 1.0.22 x64 已安装到本电脑。
+MSI 安装退出码：0。
+需要重启：安装程序未要求重启。
+未对平板执行任何刷写或数据清除。
+来源：https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x64.msi
+上游项目：https://github.com/daynix/UsbDk/releases/tag/v1.00-22
+Authenticode 状态：Valid；发布者：Red Hat, Inc.；包含有效时间戳。
+MSI SHA256：91f6f695e1e13c656024e6d3b55620bf08d8835ef05ee0496935ba6bb62466a5
+复制到其他电脑后，需要安装该电脑的正常 MTK 端口驱动和 UsbDk。原电脑的驱动安装状态不会随本包转移。
