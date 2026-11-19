@@ -6,6 +6,12 @@
 
 刷机步骤与使用说明见 [README_刷机步骤.txt](README_刷机步骤.txt)。
 
+## Agent Skill 和原始备份校验
+
+在仓库根目录使用 `$c30-flash`，或读取 [.agents/skills/c30-flash/SKILL.md](.agents/skills/c30-flash/SKILL.md)。
+
+持有 GeekFlashTool 原始备份时，运行 `python tools/check_original_backup.py "提取后的读回目录"` 比对原厂镜像 SHA-256 和 scatter 的关键分区布局。通过后可从该备份准备 `rollback/super.img`。在线连接前，仍需通过仓库的完整包校验。
+
 ## 开源许可证
 
 本仓库原创代码采用 **GNU GPL v3.0（GPL-3.0-only）**，完整条款见 [LICENSE](LICENSE)。
